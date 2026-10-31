@@ -1,5 +1,7 @@
 # TEAMMATES
 
+> **This is a fork of [TEAMMATES](https://github.com/TEAMMATES/teammates), maintained by Jose Ottati, Sam Stewart and Mazen Malas for COMP 312 at Loyola University Chicago.** The original project reached end of service in October 2026. We are continuing work on issue #14360 here. TEAMMATES is licensed under GPLv2, and this fork keeps that license.
+
 [![GitHub Actions Build Status Component Tests](https://github.com/TEAMMATES/teammates/workflows/Component%20Tests/badge.svg)](https://github.com/TEAMMATES/teammates/actions)
 [![GitHub Actions Build Status E2E Tests](https://github.com/TEAMMATES/teammates/workflows/E2E%20Tests/badge.svg)](https://github.com/TEAMMATES/teammates/actions)
 [![Codecov Coverage Status](https://codecov.io/gh/TEAMMATES/teammates/branch/master/graph/badge.svg)](https://codecov.io/gh/TEAMMATES/teammates)
