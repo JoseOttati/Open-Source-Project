@@ -235,7 +235,7 @@ export class FeedbackSessionsService {
   hasResponsesForQuestion(questionId: string): Observable<HasResponses> {
     const paramMap: Record<string, string> = {
       entitytype: 'instructor',
-      questionid: questionId,
+      [QueryParamKeys.FEEDBACK_QUESTION_ID]: questionId,
     };
     return this.httpRequestService.get(ResourceEndpoints.HAS_RESPONSES, paramMap);
   }
@@ -398,7 +398,7 @@ export class FeedbackSessionsService {
     };
 
     if (queryParams.questionId) {
-      paramMap['questionid'] = queryParams.questionId;
+      paramMap[QueryParamKeys.FEEDBACK_QUESTION_ID] = queryParams.questionId;
     }
 
     return this.httpRequestService.get(ResourceEndpoints.COURSE_SESSION_RESULTS, paramMap);

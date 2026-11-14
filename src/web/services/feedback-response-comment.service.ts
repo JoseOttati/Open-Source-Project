@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpRequestService } from './http-request.service';
-import { ResourceEndpoints } from '../types/api-const';
+import { QueryParamKeys, ResourceEndpoints } from '../types/api-const';
 import { ResponseInstructorComment, MessageOutput } from '../types/api-output';
 import { ResponseInstructorCommentCreateRequest, ResponseInstructorCommentUpdateRequest } from '../types/api-request';
 
@@ -24,7 +24,7 @@ export class ResponseInstructorCommentService {
     return this.httpRequestService.post(
       ResourceEndpoints.RESPONSE_COMMENT,
       {
-        responseid: responseId,
+        [QueryParamKeys.FEEDBACK_RESPONSE_ID]: responseId,
       },
       createRequest,
     );
@@ -40,7 +40,7 @@ export class ResponseInstructorCommentService {
     return this.httpRequestService.put(
       ResourceEndpoints.RESPONSE_COMMENT,
       {
-        responsecommentid: commentId,
+        [QueryParamKeys.FEEDBACK_RESPONSE_COMMENT_ID]: commentId,
       },
       updateRequest,
     );
@@ -51,7 +51,7 @@ export class ResponseInstructorCommentService {
    */
   deleteComment(commentId: string): Observable<MessageOutput> {
     return this.httpRequestService.delete(ResourceEndpoints.RESPONSE_COMMENT, {
-      responsecommentid: commentId,
+      [QueryParamKeys.FEEDBACK_RESPONSE_COMMENT_ID]: commentId,
     });
   }
 }

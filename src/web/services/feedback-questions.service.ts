@@ -629,7 +629,7 @@ export class FeedbackQuestionsService {
     feedbackQuestionId: string,
     request: FeedbackQuestionUpdateRequest,
   ): Observable<FeedbackQuestion> {
-    const paramMap: Record<string, string> = { questionid: feedbackQuestionId };
+    const paramMap: Record<string, string> = { [QueryParamKeys.FEEDBACK_QUESTION_ID]: feedbackQuestionId };
 
     return this.httpRequestService.put(ResourceEndpoints.QUESTION, paramMap, request);
   }
@@ -638,7 +638,7 @@ export class FeedbackQuestionsService {
    * Deletes a feedback question
    */
   deleteFeedbackQuestion(feedbackQuestionId: string): Observable<MessageOutput> {
-    const paramMap: Record<string, string> = { questionid: feedbackQuestionId };
+    const paramMap: Record<string, string> = { [QueryParamKeys.FEEDBACK_QUESTION_ID]: feedbackQuestionId };
 
     return this.httpRequestService.delete(ResourceEndpoints.QUESTION, paramMap);
   }
