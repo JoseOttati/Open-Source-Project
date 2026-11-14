@@ -193,7 +193,7 @@ export class FeedbackResponsesService {
     moderatedPerson: string;
   }): Observable<FeedbackResponsesResponse> {
     const paramMap: Record<string, string> = {
-      questionid: queryParams.questionId,
+      [QueryParamKeys.FEEDBACK_QUESTION_ID]: queryParams.questionId,
       intent: queryParams.intent,
       [QueryParamKeys.KEY]: queryParams.key,
       [QueryParamKeys.FEEDBACK_SESSION_MODERATED_PERSON]: queryParams.moderatedPerson,
@@ -235,7 +235,7 @@ export class FeedbackResponsesService {
     moderatedPerson: string;
   }): Observable<MessageOutput> {
     return this.httpRequestService.delete(ResourceEndpoints.RESPONSE_GIVER_COMMENT, {
-      responseid: params.responseId,
+      [QueryParamKeys.FEEDBACK_RESPONSE_ID]: params.responseId,
       intent: params.intent,
       [QueryParamKeys.KEY]: params.key,
       [QueryParamKeys.FEEDBACK_SESSION_MODERATED_PERSON]: params.moderatedPerson,
