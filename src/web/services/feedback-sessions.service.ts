@@ -87,7 +87,7 @@ export class FeedbackSessionsService {
     previewAs?: string;
   }): Observable<SessionSubmission> {
     const paramMap: Record<string, string> = {
-      intent: queryParams.intent,
+      [QueryParamKeys.INTENT]: queryParams.intent,
       [QueryParamKeys.FEEDBACK_SESSION_ID]: queryParams.feedbackSessionId,
     };
 
@@ -453,8 +453,8 @@ export class FeedbackSessionsService {
     captchaResponse: string;
   }): Observable<SessionLinksRecoveryResponse> {
     const paramMap: Record<string, string> = {
-      studentemail: queryParam.sessionLinksRecoveryEmail,
-      captcharesponse: queryParam.captchaResponse,
+      [QueryParamKeys.STUDENT_EMAIL]: queryParam.sessionLinksRecoveryEmail,
+      [QueryParamKeys.USER_CAPTCHA_RESPONSE]: queryParam.captchaResponse,
     };
 
     return this.httpRequestService.post(ResourceEndpoints.SESSION_LINKS_RECOVERY, paramMap);

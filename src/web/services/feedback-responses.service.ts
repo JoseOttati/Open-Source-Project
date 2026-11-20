@@ -194,7 +194,7 @@ export class FeedbackResponsesService {
   }): Observable<FeedbackResponsesResponse> {
     const paramMap: Record<string, string> = {
       [QueryParamKeys.FEEDBACK_QUESTION_ID]: queryParams.questionId,
-      intent: queryParams.intent,
+      [QueryParamKeys.INTENT]: queryParams.intent,
       [QueryParamKeys.KEY]: queryParams.key,
       [QueryParamKeys.FEEDBACK_SESSION_MODERATED_PERSON]: queryParams.moderatedPerson,
     };
@@ -217,7 +217,7 @@ export class FeedbackResponsesService {
       ResourceEndpoints.RESPONSES,
       {
         [QueryParamKeys.FEEDBACK_SESSION_ID]: feedbackSessionId,
-        intent: params.intent,
+        [QueryParamKeys.INTENT]: params.intent,
         [QueryParamKeys.KEY]: params.key,
         [QueryParamKeys.FEEDBACK_SESSION_MODERATED_PERSON]: params.moderatedPerson,
       },
@@ -236,7 +236,7 @@ export class FeedbackResponsesService {
   }): Observable<MessageOutput> {
     return this.httpRequestService.delete(ResourceEndpoints.RESPONSE_GIVER_COMMENT, {
       [QueryParamKeys.FEEDBACK_RESPONSE_ID]: params.responseId,
-      intent: params.intent,
+      [QueryParamKeys.INTENT]: params.intent,
       [QueryParamKeys.KEY]: params.key,
       [QueryParamKeys.FEEDBACK_SESSION_MODERATED_PERSON]: params.moderatedPerson,
     });
